@@ -16,6 +16,13 @@ export default {
         console.log(store.films)
 
       })
+    },
+    fetchSerieTV(){
+        axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${store.API_KEY}&query=${store.ricerca_query}`).then((res) => {
+            console.log(res.data)
+            store.serieTV = res.data.results
+            console.log(store.serieTV)
+        })
     }
   },
   created(){
@@ -31,7 +38,7 @@ export default {
         <div class="header-container">
             <div class="nome">BOOLFLIX</div>
             <div class="search">
-                <input type="text" placeholder="Cerca" class="search-input" v-model="store.ricerca_query" @keydown.enter="fetchFilm()">
+                <input type="text" placeholder="Cerca" class="search-input" v-model="store.ricerca_query" @keydown.enter="fetchFilm(), fetchSerieTV()" >
                 <button class="button-search" @click="fetchFilm">Cerca</button>
             </div>
         </div>

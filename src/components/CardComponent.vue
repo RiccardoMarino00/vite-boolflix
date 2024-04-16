@@ -6,15 +6,8 @@ export default {
             store
         }
     },
-    props: ['film'],
-    methods: {
-        // flagLanguage(string){
-        //     if (film.original_language === en){
+    props: ['film', 'serieTv'],
 
-        //     }
-
-        // }
-    }
 }
 </script>
 
@@ -28,7 +21,6 @@ export default {
             <div class="language" v-else-if="film.original_language === 'zh'"> <img class="img-lin" src="../assets/cina.jpg" alt=""> </div>
             <div class="language" v-else-if="film.original_language === 'ja'"> <img class="img-lin" src="../assets/giappone.png" alt=""> </div>
             <div class="language" v-else> <strong>Lingua: </strong> {{ film.original_language }} </div>
-
             <div class="vote" ><strong>Voto: </strong>  {{ film.vote_average }}</div>
         </div>
     </div>
