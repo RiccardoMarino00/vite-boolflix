@@ -14,13 +14,11 @@ export default {
 </script>
 
 <template>
-    <ul v-for="film in store.films" :key="store.id">
-        <li>
-            <cardComponent :film="film"/>
-        </li>
-    </ul>
+    <div  class="row">
+        <cardComponent :film="film" class="col" v-for="film in store.films" :key="store.id"/>
+    </div>
 </template>
 
 <style lang="scss" scoped>
-
+    @use '/style/partials/mainStyle.scss'
 </style>
