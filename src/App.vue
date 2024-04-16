@@ -1,13 +1,12 @@
 <script >
-// import HelloWorld from './components/HelloWorld.vue'
 import headerComponent from './components/HeaderComponent.vue'
 import mainComponent from './components/MainComponent.vue'
-// import {store} from './store.js'
+import store from './store.js'
 
 export default {
   data (){
     return {
-      // store
+      store
 
     }
 
@@ -16,7 +15,12 @@ export default {
   components: {
     headerComponent,
     mainComponent,
-  }
+  },
+  
+  
+  // created(){
+  //   this.fetchFilm()
+  // }
 
 }
 </script>
@@ -26,6 +30,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
- @use '../style/general.scss'
+ @use './style/general.scss';
+
+
+
+
 
 </style>

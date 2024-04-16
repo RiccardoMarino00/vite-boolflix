@@ -1,10 +1,25 @@
 <script>
+import store from '../store.js'
+import axios from 'axios'
+
 export default {
     data(){
         return {
-
+            store,
         }
+    },
+    methods: {
+    fetchFilm(){
+      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${store.API_KEY}&query=${store.ricerca_query}`).then((res) => {
+        console.log(res.data)
+        console.log(store.ricerca_query)
+      })
     }
+  },
+  created(){
+    console.log(store.API_KEY)
+  }
+    // props: ['ricerca_query']
 
 }
 </script>
@@ -14,10 +29,9 @@ export default {
         <div class="header-container">
             <div class="nome">BOOLFLIX</div>
             <div class="search">
-                <input type="text" placeholder="Cerca" class="search-input">
-                <button class="button-search">Cerca</button>
+                <input type="text" placeholder="Cerca" class="search-input" v-model="store.ricerca_query" >
+                <button class="button-search" @click="fetchFilm">Cerca</button>
             </div>
-          
         </div>
     </header>
 </template>
