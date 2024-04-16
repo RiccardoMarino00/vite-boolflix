@@ -18,6 +18,7 @@ export default {
   },
   
   
+  
   // created(){
   //   this.fetchFilm()
   // }
@@ -27,6 +28,7 @@ export default {
 
 <template>
   <headerComponent/>
+  <mainComponent/>
 </template>
 
 <style lang="scss" scoped>
