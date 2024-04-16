@@ -10,14 +10,15 @@ export default {
     components: {
         cardComponent,
     }
-
 }
 </script>
 
 <template>
-    <div v-for="film in store.films" :key="store.id">
-        <cardComponent :film="film"/>
-    </div>
+    <ul v-for="film in store.films" :key="store.id">
+        <li>
+            <cardComponent :film="film"/>
+        </li>
+    </ul>
 </template>
 
 <style lang="scss" scoped>

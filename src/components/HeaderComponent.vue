@@ -12,7 +12,7 @@ export default {
     fetchFilm(){
       axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${store.API_KEY}&query=${store.ricerca_query}`).then((res) => {
         console.log(res.data)
-        store.films = res.data
+        store.films = res.data.results
         console.log(store.films)
 
       })

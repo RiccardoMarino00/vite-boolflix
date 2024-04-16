@@ -6,22 +6,17 @@ export default {
             store
         }
     },
-    // props: ['films'],
-
-    // props: ['info'],
-        
-    
-
+    props: ['film'],
 }
 </script>
 
 <template>
     <div class="card">
         <div class="card-body">
-            <div class="title">{{ store.films.title}}</div>
-            <div class="original-title"></div>
-            <div class="language"></div>
-            <div class="vote"></div>
+            <div class="title">{{film.title}}</div>
+            <div class="original-title">{{ film.original_title }}</div>
+            <div class="language">{{ film.original_language }}</div>
+            <div class="vote">{{ film.vote_average }}</div>
         </div>
     </div>
 </template>
