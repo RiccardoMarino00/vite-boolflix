@@ -4,6 +4,8 @@ export default {
     data(){
         return {
             // store
+            info: false,
+
         }
     },
     props: {
@@ -18,11 +20,11 @@ export default {
 </script>
 
 <template>
-    <div class="card">
-        <div class="card-img">
+    <div class="card" @mouseover="info = true" @mouseleave="info = false">
+        <div class="card-img" v-if="info === false" >
             <img :src= "`https://image.tmdb.org/t/p/w342${item.poster_path}`" alt="">
         </div>
-        <div class="card-body">
+        <div class="card-body" v-if="info === true" >
             <div class="title"><strong>Titolo: </strong>{{item.title}}</div>
             <div class="original-title"><strong>Titolo originale: </strong>{{ item.original_title }}</div>
             <div class="language" v-if="item.original_language === 'en'"><strong>Lingua: </strong> <img class="img-lin" src="../assets/inghilterra.jpg" alt=""> </div>
@@ -73,8 +75,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '/style/partials/cardStyle.scss';
 .img-lin{
     width: 20px;
-    aspect-ratio: 1;
 }
+
+
 </style>
