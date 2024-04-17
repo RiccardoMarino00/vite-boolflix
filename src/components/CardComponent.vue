@@ -12,33 +12,16 @@ export default {
             required: true,
         }
     },
+   
 
-    
-    // methods: {
-    //     renameKey(){
-    //         console.log(this.serieTV)
-    //         serieTV.map(serie => {
-    //             const {
-    //                 name,
-    //                 original_name,
-    //             } = serie;
-
-    //             return {
-    //                 title: name,
-    //                 original_title: original_name,
-    //             }
-    //         })
-    //     },
-    // },
-    // mounted(){
-    //     this.renameKey()
-    //     console.log(serieTv)
-    // }
 }
 </script>
 
 <template>
     <div class="card">
+        <!-- <div class="card-img">
+            <img src= "`https://image.tmdb.org/t/p/w342 ${item.poster_path}`" alt="">
+        </div> -->
         <div class="card-body">
             <div class="title"><strong>Titolo: </strong>{{item.title}}</div>
             <div class="original-title"><strong>Titolo originale: </strong>{{ item.original_title }}</div>
@@ -47,7 +30,11 @@ export default {
             <div class="language" v-else-if="item.original_language === 'zh'"> <img class="img-lin" src="../assets/cina.jpg" alt=""> </div>
             <div class="language" v-else-if="item.original_language === 'ja'"> <img class="img-lin" src="../assets/giappone.png" alt=""> </div>
             <div class="language" v-else> <strong>Lingua: </strong> {{ item.original_language }} </div>
-            <div class="vote" ><strong>Voto: </strong>  {{ item.vote_average }}</div>
+            <div class="vote" v-if="item.vote_average >= 9 " ><strong>Voto: </strong> 5 </div>
+            <div class="vote" v-else-if="item.vote_average >= 7"><strong>Voto: </strong> 4 </div>
+            <div class="vote" v-else-if="item.vote_average >= 5"><strong>Voto: </strong> 3 </div>
+            <div class="vote" v-else-if="item.vote_average >= 3"><strong>Voto: </strong> 2 </div>
+            <div class="vote" v-else-if="item.vote_average >= 1"><strong>Voto: </strong> 1 </div>
             <div>
                 <font-awesome-icon :icon="['far', 'star']" />
             </div>

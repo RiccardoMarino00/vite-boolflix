@@ -5,7 +5,7 @@ const store = reactive ({
     ricerca_query: '',
     films: [],
     serieTV: [],
-    newKey: ['title' , 'original_title'],
+    renamedSerieTV: [],
 
 })
 
