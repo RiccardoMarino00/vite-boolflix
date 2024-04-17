@@ -30,12 +30,52 @@ export default {
             <div class="language" v-else-if="item.original_language === 'zh'"> <img class="img-lin" src="../assets/cina.jpg" alt=""> </div>
             <div class="language" v-else-if="item.original_language === 'ja'"> <img class="img-lin" src="../assets/giappone.png" alt=""> </div>
             <div class="language" v-else> <strong>Lingua: </strong> {{ item.original_language }} </div>
-            <div class="vote" v-if="item.vote_average >= 9 " ><strong>Voto: </strong> 5 </div>
+            <div class="vote" v-if="item.vote_average >= 9"><strong>Voto: </strong> 5 </div>
             <div class="vote" v-else-if="item.vote_average >= 7"><strong>Voto: </strong> 4 </div>
             <div class="vote" v-else-if="item.vote_average >= 5"><strong>Voto: </strong> 3 </div>
             <div class="vote" v-else-if="item.vote_average >= 3"><strong>Voto: </strong> 2 </div>
             <div class="vote" v-else-if="item.vote_average >= 1"><strong>Voto: </strong> 1 </div>
-            <div>
+            <div class="vote" v-else-if="item.vote_average < 1"><strong>Voto: </strong> 0 </div>
+            <div class="star" v-if="item.vote_average >= 9">
+                <font-awesome-icon :icon="['fas', 'star']" />
+                <font-awesome-icon :icon="['fas', 'star']" />
+                <font-awesome-icon :icon="['fas', 'star']" />
+                <font-awesome-icon :icon="['fas', 'star']" />
+                <font-awesome-icon :icon="['fas', 'star']" />
+            </div>
+            <div class="star" v-else-if="item.vote_average >= 7">
+                <font-awesome-icon :icon="['fas', 'star']" />
+                <font-awesome-icon :icon="['fas', 'star']" />
+                <font-awesome-icon :icon="['fas', 'star']" />
+                <font-awesome-icon :icon="['fas', 'star']" />
+                <font-awesome-icon :icon="['far', 'star']" />
+            </div>
+            <div class="star" v-else-if="item.vote_average >= 5">
+                <font-awesome-icon :icon="['fas', 'star']" />
+                <font-awesome-icon :icon="['fas', 'star']" />
+                <font-awesome-icon :icon="['fas', 'star']" />
+                <font-awesome-icon :icon="['far', 'star']" />
+                <font-awesome-icon :icon="['far', 'star']" />
+            </div>
+            <div class="star" v-else-if="item.vote_average >= 3">
+                <font-awesome-icon :icon="['fas', 'star']" />
+                <font-awesome-icon :icon="['fas', 'star']" />
+                <font-awesome-icon :icon="['far', 'star']" />
+                <font-awesome-icon :icon="['far', 'star']" />
+                <font-awesome-icon :icon="['far', 'star']" />
+            </div>
+            <div class="star" v-else-if="item.vote_average >= 1">
+                <font-awesome-icon :icon="['fas', 'star']" />
+                <font-awesome-icon :icon="['far', 'star']" />
+                <font-awesome-icon :icon="['far', 'star']" />
+                <font-awesome-icon :icon="['far', 'star']" />
+                <font-awesome-icon :icon="['far', 'star']" />
+            </div>
+            <div class="star" v-else-if="item.vote_average < 1">
+                <font-awesome-icon :icon="['far', 'star']" />
+                <font-awesome-icon :icon="['far', 'star']" />
+                <font-awesome-icon :icon="['far', 'star']" />
+                <font-awesome-icon :icon="['far', 'star']" />
                 <font-awesome-icon :icon="['far', 'star']" />
             </div>
         </div>
