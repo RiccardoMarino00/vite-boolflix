@@ -14,16 +14,24 @@ export default {
         console.log(res.data)
         store.films = res.data.results
         console.log(store.films)
+      })
 
+      axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${store.API_KEY}&query=${store.ricerca_query}`).then((res) => {
+            // console.log(res.data)
+            store.serieTV = res.data.results
+            const renamedSerieTV = store.serieTV.map(({name: title, original_name: original_title, adult, id, original_language, release_date, vote_average, vote_count}) => (
+              {title, original_title, adult, id, original_language, release_date, vote_average, vote_count}));
+              console.log(renamedSerieTV)
+            // console.log(store.serieTV)
       })
     },
-    fetchSerieTV(){
-        axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${store.API_KEY}&query=${store.ricerca_query}`).then((res) => {
-            console.log(res.data)
-            store.serieTV = res.data.results
-            console.log(store.serieTV)
-        })
-    }
+    // fetchSerieTV(){
+    //     axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${store.API_KEY}&query=${store.ricerca_query}`).then((res) => {
+    //         console.log(res.data)
+    //         store.serieTV = res.data.results
+    //         // console.log(store.serieTV)
+    //     })
+    // }
   },
   created(){
     console.log(store.API_KEY)
@@ -38,7 +46,7 @@ export default {
         <div class="header-container">
             <div class="nome">BOOLFLIX</div>
             <div class="search">
-                <input type="text" placeholder="Cerca" class="search-input" v-model="store.ricerca_query" @keydown.enter="fetchFilm(), fetchSerieTV()" >
+                <input type="text" placeholder="Cerca" class="search-input" v-model="store.ricerca_query" @keydown.enter="fetchFilm()" >
                 <button class="button-search" @click="fetchFilm">Cerca</button>
             </div>
         </div>

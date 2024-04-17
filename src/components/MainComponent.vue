@@ -15,7 +15,7 @@ export default {
 
 <template>
     <div  class="row">
-        <cardComponent :film="film" class="col" v-for="film in store.films" :key="store.id"/>
+        <cardComponent  class="col" v-for="film in store.films" :key="store.id" :item="film" />
     </div>
 </template>
 
