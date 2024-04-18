@@ -22,7 +22,7 @@ export default {
 <template>
     <div class="card" @mouseover="info = true" @mouseleave="info = false">
         <div class="card-img" v-if="info === false" >
-            <img :src= "`https://image.tmdb.org/t/p/w342${item.poster_path}`" alt="">
+            <img :src= "`https://image.tmdb.org/t/p/w342${item.poster_path}`" alt="" class="poster">
         </div>
         <div class="card-body" v-if="info === true" >
             <div class="title"><strong>Titolo: </strong>{{item.title}}</div>
@@ -31,6 +31,17 @@ export default {
             <div class="language" v-else-if="item.original_language === 'it'"> <img class="img-lin" src="../assets/italia.jpg" alt=""> </div>
             <div class="language" v-else-if="item.original_language === 'zh'"> <img class="img-lin" src="../assets/cina.jpg" alt=""> </div>
             <div class="language" v-else-if="item.original_language === 'ja'"> <img class="img-lin" src="../assets/giappone.png" alt=""> </div>
+            <div class="language" v-else-if="item.original_language === 'es'"> <img class="img-lin" src="../assets/spagna.jpg" alt=""> </div>
+            <div class="language" v-else-if="item.original_language === 'da'"> <img class="img-lin" src="../assets/danimarca.jpg" alt=""> </div>
+            <div class="language" v-else-if="item.original_language === 'no'"> <img class="img-lin" src="../assets/norvegia.jpg" alt=""> </div>
+            <div class="language" v-else-if="item.original_language === 'lv'"> <img class="img-lin" src="../assets/lettonia.jpg" alt=""> </div>
+            <div class="language" v-else-if="item.original_language === 'ml'"> <img class="img-lin" src="../assets/malayalam.png" alt=""> </div>
+            <div class="language" v-else-if="item.original_language === 'ar'"> <img class="img-lin" src="../assets/arabic.jpg" alt=""> </div>
+            <div class="language" v-else-if="item.original_language === 'sk'"> <img class="img-lin" src="../assets/slovak.jpg" alt=""> </div>
+            <div class="language" v-else-if="item.original_language === 'tr'"> <img class="img-lin" src="../assets/turkish.png" alt=""> </div>
+            <div class="language" v-else-if="item.original_language === 'pt'"> <img class="img-lin" src="../assets/portogallo.webp" alt=""> </div>
+
+
             <div class="language" v-else> <strong>Lingua: </strong> {{ item.original_language }} </div>
             <div class="vote" v-if="item.vote_average >= 9"><strong>Voto: </strong> 5 </div>
             <div class="vote" v-else-if="item.vote_average >= 7"><strong>Voto: </strong> 4 </div>

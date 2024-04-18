@@ -11,10 +11,17 @@
 }
 
 .container{
-    background-color: rgb(29, 31, 32);
     color: whitesmoke;
     max-width: 100%;
-    scroll-behavior: smooth;
+    position: relative;
+    height: 100vh;
+}
+
+.no-film{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
