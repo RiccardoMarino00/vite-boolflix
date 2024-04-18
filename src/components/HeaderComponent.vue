@@ -40,9 +40,11 @@ export default {
         <div class="header-container">
             <div class="nome">BOOLFLIX</div>
             <div class="search">
-                <!-- <font-awesome-icon :icon="['fas', 'magnifying-glass']" /> -->
-                <input type="text" placeholder="Cerca" class="search-input" v-model="store.ricerca_query" @keydown.enter="fetchFilm()" >
-                <button class="button-search" @click="fetchFilm()">Cerca</button>
+                <font-awesome-icon :icon="['fas', 'magnifying-glass']" class="icona-lente" />
+                <input type="text" placeholder="     Cerca..." class="search-input" v-model="store.ricerca_query" @keydown.enter="fetchFilm()" >
+            </div>
+            <div class="search">
+              <button class="button-search" @click="fetchFilm()">Cerca</button>
             </div>
         </div>
     </header>

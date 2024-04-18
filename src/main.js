@@ -10,9 +10,9 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import {faStar} from '@fortawesome/free-regular-svg-icons'
 import {faStar as faStarSolid} from '@fortawesome/free-solid-svg-icons'
-// import {magnifyingGlass} from '@fortawesome/free-solid-svg-icons'
+import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 
-library.add(faStar, faStarSolid, )
+library.add(faStar, faStarSolid, faMagnifyingGlass )
 
 const app = createApp(App)
 app.component('font-awesome-icon', FontAwesomeIcon)
